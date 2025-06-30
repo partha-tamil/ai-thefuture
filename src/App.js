@@ -8,7 +8,7 @@ const App = () => {
       {/* Navbar */}
       <nav className="bg-white shadow-md rounded-b-xl mx-3 mt-3">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <a href="#" className="text-blue-600 text-3xl font-bold">
+          <a href="#home" className="text-blue-600 text-3xl font-bold">
             AI & Cloud
           </a>
           <div className="hidden md:flex space-x-6">
