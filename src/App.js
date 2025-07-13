@@ -15,9 +15,6 @@ const App = () => {
             <a href="#home" className="text-gray-700 hover:text-blue-600 font-semibold transition-colors duration-200">
               Home
             </a>
-            <a href="#features" className="text-gray-700 hover:text-blue-600 font-semibold transition-colors duration-200">
-              Features
-            </a>
             <a href="#blog" className="text-gray-700 hover:text-blue-600 font-semibold transition-colors duration-200">
               Blog
             </a>
@@ -33,20 +30,7 @@ const App = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative flex items-center justify-center h-[500px] md:h-[600px] lg:h-[700px] bg-gradient-to-br from-blue-600 to-blue-800 text-white overflow-hidden rounded-b-3xl shadow-xl mb-12">
-        <div className="absolute inset-0 bg-pattern opacity-10"></div> {/* Optional background pattern */}
-        <div className="container mx-auto text-center px-4 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-            Shape Tomorrow with AI Innovation
-          </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 opacity-90">
-            Unlock the power of artificial intelligence to revolutionize your business, streamline operations, and discover new opportunities. AITHEFUTURE is your partner in intelligent transformation.
-          </p>
-          <a href="#features" className="inline-block bg-white text-blue-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-            Explore Features
-          </a>
-        </div>
-      </section>
+      
 
       {/* Blog Posts Section */}
       <section id="blog" className="container mx-auto py-12 px-4 mb-12">
