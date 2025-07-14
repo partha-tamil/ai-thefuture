@@ -310,7 +310,7 @@ const App = () => {
       {renderContent()}
 
       {/* Call to Action Section (Only visible on home/blog list) */}
-      {(currentPage === 'home' || currentPage === 'blog') && (
+      {(currentPage === 'sasa') && (
         <section className="container mx-auto text-center py-12 px-4 mb-12">
           <div className="p-8 md:p-12 bg-gray-100 rounded-3xl shadow-lg">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-600">Ready to Transform Your Business?</h2>
