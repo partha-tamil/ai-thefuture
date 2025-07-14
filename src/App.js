@@ -1,18 +1,31 @@
 import React, { useState, useEffect } from 'react';
 
 // Component for the Hero Section
+// Component for the Hero Section
 const HeroSection = () => (
   <section id="home" className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 md:py-32 rounded-b-3xl mx-3 mb-12 shadow-xl">
     <div className="container mx-auto px-4 text-center">
-      <h1 className="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-down">
-        Your Name - Cloud Architect & AI Designer
+      {/* Reduced header size from text-4xl md:text-6xl to text-3xl md:text-5xl */}
+      <h1 className="text-3xl md:text-5xl font-extrabold mb-4 animate-fade-in-down">
+        Cloud Architect & AI Designer
       </h1>
       <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 opacity-90 animate-fade-in-up">
         Building Scalable, Secure, and Intelligent Solutions on AWS, Azure, & GCP.
       </p>
-      <a href="#blog" className="inline-block bg-white text-blue-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 animate-bounce-in">
-        Explore My Insights
-      </a>
+      <div className="flex justify-center items-center space-x-4"> {/* Container for buttons/links */}
+        <a href="#blog" className="inline-block bg-white text-blue-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 animate-bounce-in">
+          Explore My Insights
+        </a>
+        {/* LinkedIn Profile Link */}
+        <a
+          href="https://www.linkedin.com/in/parthasarathy-tamilselvam/" // **IMPORTANT: Replace with your actual LinkedIn URL**
+          target="_blank" // Opens in a new tab
+          rel="noopener noreferrer" // Recommended for security when using target="_blank"
+          className="inline-block bg-blue-700 text-white hover:bg-blue-800 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+        >
+          Connect on LinkedIn
+        </a>
+      </div>
     </div>
   </section>
 );
@@ -77,6 +90,74 @@ const BlogPostMLOps = () => (
     </div>
   </div>
 );
+
+// New Contact Page Component
+const ContactPage = () => (
+  <section id="contact" className="container mx-auto py-12 px-4 mb-12">
+    <div className="bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto">
+      <h2 className="text-4xl font-bold mb-6 text-gray-900 text-center">Get in Touch</h2>
+      <p className="text-gray-700 leading-relaxed mb-8 text-center">
+        Have a question or want to discuss a project? Feel free to reach out using the form below or connect with me through the provided channels.
+      </p>
+      <form className="space-y-6">
+        <div>
+          <label htmlFor="name" className="block text-gray-800 font-semibold mb-2">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Your Name"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-gray-800 font-semibold mb-2">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="your.email@example.com"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="message" className="block text-gray-800 font-semibold mb-2">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Your message..."
+            required
+          ></textarea>
+        </div>
+        <div className="text-center">
+          <button
+            type="submit"
+            className="inline-block bg-blue-600 text-white hover:bg-blue-700 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+      <div className="mt-10 text-center">
+        <p className="text-gray-700 mb-2">You can also reach me at:</p>
+        <p className="text-lg font-semibold text-blue-600">info@aithefuture.com</p>
+        <div className="flex justify-center space-x-4 mt-4">
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+            <i className="fab fa-linkedin text-2xl"></i> {/* Example: Font Awesome LinkedIn icon */}
+          </a>
+          <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-400 transition-colors duration-200">
+            <i className="fab fa-twitter text-2xl"></i> {/* Example: Font Awesome Twitter icon */}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 
 // Main App component
 const App = () => {
@@ -152,10 +233,14 @@ const App = () => {
             </div>
           </section>
         );
+      case 'contact': // New case for the contact page
+        return <ContactPage />;
       case 'home':
       default:
         return (
           <>
+            {/* Hero Section */}
+            <HeroSection />
             {/* Blog Posts Section (displayed on home by default, can also be accessed via #blog) */}
             <section id="blog-preview" className="container mx-auto py-12 px-4 mb-12">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -240,7 +325,7 @@ const App = () => {
       )}
 
       {/* Footer */}
-      <footer id="contact" className="bg-gray-900 text-gray-300 py-10 rounded-t-3xl shadow-xl">
+      <footer className="bg-gray-900 text-gray-300 py-10 rounded-t-3xl shadow-xl">
         <div className="container mx-auto text-center px-4">
           <p className="mb-2">&copy; 2025 AITHEFUTURE. All rights reserved.</p>
           <p className="mb-4">Designed with <span className="text-red-500">&#x2764;</span> and AI.</p>
